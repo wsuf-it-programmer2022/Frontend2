@@ -32,7 +32,7 @@ function getUsers() {
   }, 100 );
 }
 
-
+// race condition
 addUser('Jim');
 getUsers(); 
 
@@ -50,3 +50,22 @@ function getUsers2() {
 }
 
 addUser2('Jim', getUsers2);
+
+// getServerStatus(1, function(error, result) {
+//   console.log(result);
+//   getServerStatus(2, function(error, result) {
+//     console.log(result);
+//     getServerStatus(3, function(error, result) {
+//       console.log(result);
+//       getServerStatus(4, function(error, result) {
+//         console.log(result);
+//         getServerStatus(5, function(error, result) {
+//           console.log(result);
+//           getServerStatus(6, function(error, result) {
+//             console.log(result);
+//           });
+//         });
+//       });
+//     });
+//   });
+// });
